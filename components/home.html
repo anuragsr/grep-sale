@@ -1,0 +1,67 @@
+<div class="home-page">
+  <div class="home-panel home-left">
+    <div class="slide">
+      <div class="content">
+        <div class="home-content-container">
+          <img class="logo-img" height="200" src="img/logo.png"/>
+          <br/>
+          <br/>
+          <div ng-hide="showResponse">
+            <p class="home-text">
+              <b>
+                Experience a whole new way of shopping.
+              </b>
+            </p>
+            <p class="home-text">
+                See your city markets on Grepsale to get original products from authorized stores at the best price.
+            </p>
+            <p class="home-text">
+                For free on your phone.
+            </p>
+            <input type="text" ng-model="user.contact" class="home-inp" placeholder="Enter your email or phone number"/><br/>
+            <input type="text" ng-model="user.city" class="home-inp" googleplace placeholder="Enter name of city"/><br/>
+            <button ng-click="getStarted()" class="home-btn">Get Started</button>
+            <div class="error" ng-show="contError">Seems like an incorrect email id or phone number to us. Please check and try again.</div>
+            <div class="error" ng-show="emptyError">Looks like you left one of the fields empty. Please try again.</div>
+          </div>
+          <div class="response-text" ng-show="showResponse">
+            <b>
+              GrepSale is coming soon to {{user.city}}.
+            </b><br/><br/>
+            <div ng-show="response == '1'">
+              We will soon be notifying you on {{user.contact}}. Thanks for landing on GrepSale. Have a great day. 
+            </div>
+            <div ng-show="response == '2'">
+              You are already on our notify list. We will be informing you soon. Have a great day ahead. 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer mobile-only" ng-click="scrollDown(2)">
+      <span class="small">Scroll for More</span><br/><i class="fa fa-angle-down" aria-hidden="true"></i>
+    </div>
+  </div>
+  <div class="home-panel home-right">
+    <div class="slide">
+      <div class="content">
+        <div class="data-one">
+          Find complete range of original<br/>
+          <span class="special ov-text">ovens</span>
+          <span class="special fr-text">refrigerators</span>
+          <span class="special tv-text">televisions</span>
+          <span class="special lp-text">laptops</span>
+          <br/>
+          <span class="small">from authorized and premium stores near you!</span><br/><br/>
+        </div>
+        <div class="data-two">
+          <span class="small text-add">Add products to hotlist</span><br/>
+          <div class="hotlist-contain"></div>
+          <span class="small text-price">Get realtime pricing!</span><br/>
+          <div class="space"></div> 
+        </div>
+        <phone-contain></phone-contain>
+      </div>
+    </div>
+  </div>
+</div>
